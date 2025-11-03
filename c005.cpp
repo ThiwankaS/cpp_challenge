@@ -1,3 +1,7 @@
+/**
+ * twin primes, cousin primes and sexy primes up toa given limit
+*/
+
 #include <iostream>
 
 bool isPrime(int n) {

@@ -1,3 +1,7 @@
+/**
+ *  largest prime number closet to a given limit
+ */
+
 #include <iostream>
 
 bool isPrime(int n) {

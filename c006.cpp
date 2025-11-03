@@ -1,3 +1,7 @@
+/**
+ * abundant numbers up to a given limit
+*/
+
 #include <iostream>
 #include <cmath>
 

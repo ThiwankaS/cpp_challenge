@@ -1,5 +1,5 @@
 /**
- * sum of the naturals divisiböe by 3 and 5
+ * sum of the naturals divisible by 3 and 5
 */
 
 #include <iostream>
