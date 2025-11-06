@@ -3,16 +3,16 @@
 #include <numeric>
 #include <regex>
 #include <vector>
-#include <sstream>
+#include <string>
 
 static const std::regex ISBN10("^(\\d[ -]?){9}[\\dXx]$");
 static const std::regex ISBN13("^(97[89][ -]?){1}(\\d[ -]?){9}\\d$");
 
 bool validate_isbn_10(std::string isbn) {
-    auto valid = false;
+    bool valid = false;
     if(std::regex_match(isbn, ISBN10)) {
-        auto w = 10;
-        auto sum = std::accumulate(isbn.begin(), isbn.end(), 0,
+        int w = 10;
+        int sum = std::accumulate(isbn.begin(), isbn.end(), 0,
         [&w](const int total, const char c){
             if(isdigit(c)) {
                 return (total + (w-- * (c - '0')));
@@ -26,10 +26,10 @@ bool validate_isbn_10(std::string isbn) {
 }
 
 bool validate_isbn_13(std::string isbn) {
-    auto valid = false;
+    bool valid = false;
     if(std::regex_match(isbn, ISBN13)) {
-        auto w = 3;
-        auto sum = std::accumulate(isbn.begin(), isbn.end(), 0,
+        int w = 3;
+        int sum = std::accumulate(isbn.begin(), isbn.end(), 0,
         [&w](const int total, const char c){
             if(isdigit(c)) {
                 w == 3 ? w = 1 : w = 3;
